@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Vitória ❤️ | De Renata, com amor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #f6dce9;
+  --pink2: #f9ecf3;
+  --rose: #d68ba8;
+  --deep: #75475f;
+  --purple: #aa91c7;
+  --gold: #e7c78b;
+  --cream: #fffafc;
+  --text: #6b5365;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body.locked {
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LOADING / OPENING */
+
+#opening {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background:
+    radial-gradient(circle at 20% 20%, #fff 0%, transparent 25%),
+    linear-gradient(145deg, #f9eaf2, #e9dff5, #fbe8e7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  transition: opacity 1.2s, visibility 1.2s;
+}
+
+#opening.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.opening-box {
+  max-width: 550px;
+  animation: appear 1.3s ease;
+}
+
+.opening-flower {
+  font-size: 60px;
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+}
+
+.opening-small {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #b27e9c;
+  margin: 25px 0 12px;
+}
+
+.opening-box h1 {
+  color: #80576f;
+  font-size: clamp(40px, 9vw, 70px);
+  line-height: 1.05;
+}
+
+.opening-box h1 em {
+  color: #d38bab;
+  font-weight: 400;
+}
+
+.opening-text {
+  margin: 20px auto;
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 350px;
+}
+
+.open-button {
+  border: 0;
+  background: linear-gradient(135deg, #c98cac, #a68bc4);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 100px;
+  box-shadow: 0 12px 30px #cba1bd55;
+  transition: .3s;
+  margin-top: 20px;
+  letter-spacing: .5px;
+}
+
+.open-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px #cba1bd80;
+}
+
+.opening-footer {
+  font-size: 11px;
+  margin-top: 28px;
+  opacity: .65;
+}
+
+/* FLOATING ELEMENTS */
+
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  animation: rise linear forwards;
+  opacity: 0;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  10% { opacity: .6; }
+  85% { opacity: .5; }
+  100% { transform: translateY(-110vh) rotate(40deg); opacity: 0; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* NAVIGATION */
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  padding: 24px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: #80576f;
+  font-size: 24px;
+}
+
+.logo span {
+  color: #d28eac;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  font-size: 12px;
+  color: #8a6b83;
+}
+
+.nav-links a:hover {
+  color: #d28eac;
+}
+
+.music-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d9b9cf;
+  border-radius: 50%;
+  background: #ffffff90;
+  color: #a16f92;
+  font-size: 17px;
+  transition: .3s;
+}
+
+.music-button.active {
+  background: #d59ab8;
+  color: white;
+  animation: float 2s infinite;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 140px 8% 90px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 35%, #ffffff 0%, transparent 32%),
+    linear-gradient(135deg, #f9edf3 0%, #eae2f4 48%, #f7e5e9 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffffff90 1.5px, transparent 1.5px);
+  background-size: 45px 45px;
+  opacity: .45;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b47e9f;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 10vw, 115px);
+  color: #79546f;
+  line-height: .98;
+  letter-spacing: -2px;
+}
+
+.hero h1 em {
+  color: #d28eac;
+  display: block;
+  font-weight: 400;
+}
+
+.hero-text {
+  max-width: 450px;
+  margin-top: 28px;
+  line-height: 2;
+  font-size: 15px;
+  color: #80687b;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.btn-primary {
+  background: linear-gradient(130deg, #d59ab8, #aa91c7);
+  color: white;
+  border: 0;
+  padding: 16px 28px;
+  border-radius: 40px;
+  font-size: 12px;
+  box-shadow: 0 10px 25px #bd94b855;
+  transition: .3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid #d5b2cb;
+  background: #ffffff50;
+  padding: 16px 28px;
+  border-radius: 40px;
+  color: #936f8a;
+  font-size: 12px;
+}
+
+.hero-image {
+  width: 39%;
+  max-width: 440px;
+  min-width: 260px;
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hero-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 48% 48% 12px 12px;
+  border: 8px solid #ffffff80;
+  box-shadow: 0 30px 80px #97789935;
+}
+
+.hero-image::before {
+  content: "♡";
+  position: absolute;
+  color: #d79bb8;
+  font-size: 60px;
+  top: -35px;
+  right: -25px;
+  z-index: 2;
+  animation: float 3s infinite;
+}
+
+.hero-caption {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #a17898;
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #ad8ca6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-indicator span {
+  width: 45px;
+  height: 1px;
+  background: #d7afca;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 110px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading .label {
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  font-size: clamp(36px, 6vw, 65px);
+  color: #79546f;
+}
+
+.section-heading h2 em {
+  color: #d28eac;
+}
+
+.section-heading p {
+  max-width: 520px;
+  margin: 20px auto 0;
+  line-height: 1.9;
+  font-size: 14px;
+  color: #967b91;
+}
+
+/* MESSAGE */
+
+.message-section {
+  background: #fff;
+  position: relative;
+}
+
+.message-card {
+  max-width: 850px;
+  margin: auto;
+  padding: 70px 9%;
+  background:
+    radial-gradient(circle at 0 0, #fbeaf3, transparent 35%),
+    #fffafd;
+  border: 1px solid #f2e4ed;
+  box-shadow: 0 30px 80px #ad85a515;
+  position: relative;
+}
+
+.message-card::before,
+.message-card::after {
+  content: "✿";
+  position: absolute;
+  font-size: 55px;
+  color: #e5b9d1;
+  opacity: .5;
+}
+
+.message-card::before {
+  top: 20px;
+  left: 24px;
+}
+
+.message-card::after {
+  bottom: 20px;
+  right: 24px;
+}
+
+.message-card .script {
+  font-family: 'Playfair Display', serif;
+  color: #d08eae;
+  text-align: center;
+  font-size: 23px;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.message-card h2 {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 55px);
+  color: #79546f;
+  margin-bottom: 35px;
+}
+
+.letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  line-height: 2.15;
+  color: #796478;
+}
+
+.letter p {
+  margin-bottom: 22px;
+}
+
+.signature {
+  text-align: right;
+  color: #c27fa2;
+  font-size: 27px;
+  font-style: italic;
+  margin-top: 35px;
+}
+
+/* MEMORIES */
+
+.memories-section {
+  background: linear-gradient(180deg, #fbf2f8, #f5edf7);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #eadce9;
+}
+
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(5) {
+  transform: translateY(35px);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform .7s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 45%, #4b334b95);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.gallery-caption small {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 9px;
+  opacity: .8;
+}
+
+.gallery-caption h3 {
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+/* VIDEOS */
+
+.video-section {
+  background: #fff;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 25px;
+}
+
+.video-card {
+  background: #f7edf5;
+  padding: 15px;
+  border-radius: 14px;
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #f4dfea, #e7ddf1);
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.video-card h3 {
+  margin: 20px 8px 8px;
+  font-size: 24px;
+  color: #805c77;
+}
+
+.video-card p {
+  margin: 0 8px 14px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #957b90;
+}
+
+/* 21 REASONS */
+
+.reasons-section {
+  background: linear-gradient(140deg, #eee4f5, #f9e8ef);
+}
+
+.reasons-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.reason {
+  padding: 28px 20px;
+  border-radius: 13px;
+  border: 1px solid #ffffffa0;
+  background: #ffffff65;
+  transition: .4s;
+  text-align: center;
+}
+
+.reason:hover {
+  background: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #c7a4c030;
+}
+
+.reason-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d194b2;
+  margin-bottom: 10px;
+}
+
+.reason p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #846a80;
+}
+
+/* TIMELINE */
+
+.timeline-section {
+  background: #fff;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: #dfbed4;
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 30px 45px;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  text-align: right;
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: "♡";
+  position: absolute;
+  top: 35px;
+  font-size: 21px;
+  color: #d295b5;
+  background: white;
+}
+
+.timeline-item:nth-child(odd)::after {
+  right: -11px;
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -11px;
+}
+
+.timeline-item h3 {
+  color: #815d78;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #927b8e;
+}
+
+/* SURPRISE */
+
+.surprise-section {
+  background: linear-gradient(145deg, #f8eaf2, #eae1f5);
+  text-align: center;
+  overflow: hidden;
+}
+
+.surprise-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 30px;
+  border: 1px solid #ffffffa0;
+  background: #ffffff55;
+  border-radius: 25px;
+}
+
+.surprise-box h2 {
+  font-size: clamp(35px, 6vw, 65px);
+  color: #79546f;
+  margin: 20px 0;
+}
+
+.surprise-box p {
+  line-height: 2;
+  color: #8e748b;
+  max-width: 520px;
+  margin: 0 auto 25px;
+}
+
+.gift-icon {
+  font-size: 65px;
+  display: inline-block;
+  animation: float 3s infinite;
+}
+
+#surprise-content {
+  display: none;
+  margin-top: 35px;
+  padding: 30px;
+  background: #fff9fd;
+  border-radius: 18px;
+  animation: appear .8s ease;
+}
+
+#surprise-content.show {
+  display: block;
+}
+
+#surprise-content h3 {
+  font-size: 32px;
+  color: #cc8eae;
+  margin-bottom: 15px;
+}
+
+#surprise-content p {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  line-height: 2;
+  color: #775c73;
+}
+
+/* FINAL */
+
+.final-section {
+  padding: 110px 20px 80px;
+  text-align: center;
+  background: #fff;
+}
+
+.final-flower {
+  font-size: 55px;
+  animation: float 4s infinite;
+}
+
+.final-section h2 {
+  font-size: clamp(45px, 9vw, 90px);
+  color: #79546f;
+  margin: 25px 0;
+  line-height: 1.1;
+}
+
+.final-section h2 em {
+  color: #d28eac;
+}
+
+.final-section p {
+  max-width: 500px;
+  margin: 20px auto;
+  line-height: 2;
+  color: #987d93;
+}
+
+.final-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #d08eae;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+footer {
+  background: #f8edf5;
+  padding: 30px;
+  text-align: center;
+  color: #a2839a;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+footer .footer-heart {
+  color: #d38eae;
+  font-size: 17px;
+  margin: 8px;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #241a29eF;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 0 60px #0004;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  border: 0;
+  background: none;
+}
+
+/* HEART BUTTON */
+
+.love-button {
+  margin-top: 35px;
+  background: transparent;
+  border: 1px solid #d8aec9;
+  color: #bd83a6;
+  border-radius: 50px;
+  padding: 14px 25px;
+  transition: .3s;
+}
+
+.love-button:hover {
+  background: #f5e3ef;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .hero-image {
+    right: 4%;
+    width: 36%;
+  }
+
+  .hero-content {
+    max-width: 58%;
+  }
+
+  .hero h1 {
+    font-size: 75px;
+  }
+
+  .gallery-item img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 650px) {
+  nav {
+    padding: 20px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 130px 7% 80px;
+    display: block;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 70px;
+  }
+
+  .hero-image {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+    width: 75%;
+    margin: 55px auto 0;
+    max-width: 350px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  section {
+    padding: 80px 6%;
+  }
+
+  .message-card {
+    padding: 50px 8%;
+  }
+
+  .letter {
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(5) {
+    transform: none;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+
+  .gallery-caption {
+    left: 14px;
+    bottom: 15px;
+  }
+
+  .gallery-caption h3 {
+    font-size: 16px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reason {
+    padding: 22px 13px;
+  }
+
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    padding: 25px 20px 25px 45px;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 5px;
+    right: auto;
+  }
+
+  .surprise-box {
+    padding: 45px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .reasons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body class="locked">
+
+<!-- ABERTURA -->
+<div id="opening">
+  <div class="opening-box">
+    <div class="opening-flower">🌷</div>
+    <div class="opening-small">Um presente feito com amor</div>
+    <h1>Para<br><em>Vitória</em></h1>
+    <p class="opening-text">
+      Hoje eu preparei um lugar especial.
+      Um lugar onde cada palavra, cada flor e cada detalhe
+      foi feito pensando em você.
+    </p>
+    <button class="open-button" onclick="openSite()">
+      Abrir seu presente ♡
+    </button>
+    <div class="opening-footer">FEITO COM AMOR POR RENATA</div>
+  </div>
+</div>
+
+<div class="floating-hearts" id="floating-hearts"></div>
+
+<!-- NAVEGAÇÃO -->
+<nav>
+  <a href="#inicio" class="logo">Para <span>Vitória</span> ♡</a>
+
+  <div class="nav-links">
+    <a href="#carta">Minha carta</a>
+    <a href="#memorias">Memórias</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#motivos">21 motivos</a>
+    <a href="#surpresa">Surpresa</a>
+  </div>
+
+  <button class="music-button" id="musicButton" onclick="toggleMusic()" title="Música">
+    ♫
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="label">26 de novembro • Um dia especial</div>
+
+    <h1>Feliz<br><em>aniversário!</em></h1>
+
+    <p class="hero-text">
+      Hoje não é só o dia em que você nasceu.
+      É o dia em que o mundo ganhou uma pessoa que,
+      anos depois, se tornaria o meu mundo inteiro.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#carta" class="btn-primary">Leia minha carta ♡</a>
+      <a href="#memorias" class="btn-outline">Ver nossas memórias</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="12.jpeg"
+      alt="Flores delicadas"
+    >
+    <div class="hero-caption">Meu lugar favorito é perto de você.</div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span></span> ROLE PARA DESCOBRIR
+  </div>
+</section>
+
+<!-- CARTA -->
+<section class="message-section" id="carta">
+  <div class="section-heading">
+    <div class="label">Palavras que vêm do coração</div>
+    <h2>Uma carta para <em>mamãe</em></h2>
+    <p>
+      Existem coisas que eu sinto todos os dias,
+      mas que talvez não fale tantas vezes quanto deveria.
+    </p>
+  </div>
+
+  <div class="message-card">
+    <div class="script">Com todo o amor do mundo...</div>
+    <h2>Minha mãe, minha Vitória.</h2>
+
+    <div class="letter">
+      <p>Oi, mamãe...</p>
+
+      <p>
+        Hoje é o seu dia, e eu queria conseguir colocar em palavras
+        tudo o que você significa para mim. Mas parece que nenhuma
+        palavra é grande o suficiente para explicar o amor que eu sinto.
+      </p>
+
+      <p>
+        Eu tenho apenas 11 anos, ainda estou descobrindo tantas coisas
+        sobre o mundo, aprendendo, crescendo e vivendo minhas aventuras.
+        Mas uma coisa eu já sei desde sempre: ter você na minha vida
+        é um dos maiores presentes que Deus poderia me dar.
+      </p>
+
+      <p>
+        Obrigada por cada cuidado, cada abraço, cada preocupação,
+        cada sorriso, cada conselho e até por aquelas vezes em que
+        você briga comigo porque quer o meu bem. Talvez eu nem sempre
+        entenda tudo agora, mas um dia vou entender ainda mais o tamanho
+        do seu amor.
+      </p>
+
+      <p>
+        Mamãe, eu espero que a vida seja tão linda com você quanto
+        você merece. Espero que seus sonhos se realizem, que seu coração
+        nunca perca a esperança, que você sorria muito e que nunca
+        se esqueça do quanto é especial.
+      </p>
+
+      <p>
+        Se algum dia você estiver triste, lembre-se de que existe
+        uma menina que olha para você e vê muito mais do que uma mãe.
+        Vê seu porto seguro, sua inspiração, seu carinho e uma das
+        pessoas mais importantes de toda a sua vida.
+      </p>
+
+      <p>
+        Eu ainda sou pequena, mas o meu amor por você é gigante.
+        É maior que qualquer distância, maior que qualquer dificuldade
+        e maior do que todas as palavras que eu conseguiria escrever.
+      </p>
+
+      <p>
+        Feliz aniversário, minha mamãe! Que seus 21 anos sejam cheios
+        de coisas maravilhosas. Que Deus cuide de você, te proteja,
+        ilumine seus caminhos e te dê muitos motivos para sorrir.
+      </p>
+
+      <p>
+        E que você nunca se esqueça: eu sempre vou ser sua menina,
+        aquela que te ama com todo o coração.
+      </p>
+    </div>
+
+    <div class="signature">
+      Eu te amo para sempre.<br>
+      — Renata ♡
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="memories-section" id="memorias">
+  <div class="section-heading">
+    <div class="label">Pequenos momentos, grandes sentimentos</div>
+    <h2>Nossas <em>memórias</em></h2>
+    <p>
+      A vida é feita de pequenos momentos que, quando estamos
+      com as pessoas certas, se tornam eternos.
+    </p>
+  </div>
+
+  <div class="gallery">
+
+  
+    <div class="gallery-item" onclick="openPhoto(this)">
+      <img
+        src="WhatsApp Image 2026-11-26 at 17.41.23.jpeg"
+        alt="Um momento de amor"
+      >
+      <div class="gallery-caption">
+        <small>MEMÓRIA Nº 06</small>
+        <h3>Para sempre nós</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:65px;font-family:'Playfair Display',serif;font-style:italic;color:#a17d98;">
+    "As melhores lembranças são aquelas que o coração guarda."
+  </p>
+</section>
+
+<!-- VIDEOS -->
+<section class="video-section" id="videos">
+  <div class="section-heading">
+    <div class="label">A vida passa, as lembranças ficam</div>
+    <h2>Nosso cinema de <em>amor</em></h2>
+    <p>
+      Cada vídeo guarda um pedacinho da nossa história.
+      Um sorriso, uma voz, um momento que eu queria guardar para sempre.
+    </p>
+  </div>
+
+  <div class="video-grid">
+
+    <div class="video-card">
+      <video controls playsinline poster="">
+        <source src="rd2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <h3>Um pedacinho de nós</h3>
+      <p>Porque os momentos com você sempre merecem ser lembrados.</p>
+    </div>
+
+    <div class="video-card">
+      <video controls playsinline>
+        <source src="WhatsApp Video 2026-11-26 at 17.41.24 (2).mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <h3>Uma lembrança para sempre</h3>
+      <p>Que possamos colecionar muitos outros momentos juntas.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 21 MOTIVOS -->
+<section class="reasons-section" id="motivos">
+  <div class="section-heading">
+    <div class="label">21 anos • 21 motivos para celebrar</div>
+    <h2>21 motivos para <em>te amar</em></h2>
+    <p>
+      Eu poderia escrever milhares de motivos.
+      Mas hoje escolhi 21, um para cada ano da sua vida.
+    </p>
+  </div>
+
+  <div class="reasons-container">
+    <div class="reasons-grid">
+
+      <div class="reason"><div class="reason-number">01</div><p>Porque você é minha mãe.</p></div>
+      <div class="reason"><div class="reason-number">02</div><p>Porque seu abraço me faz sentir segura.</p></div>
+      <div class="reason"><div class="reason-number">03</div><p>Porque você faz parte dos meus melhores momentos.</p></div>
+      <div class="reason"><div class="reason-number">04</div><p>Porque seu carinho é único.</p></div>
+      <div class="reason"><div class="reason-number">05</div><p>Porque você cuida de mim.</p></div>
+      <div class="reason"><div class="reason-number">06</div><p>Porque seu sorriso alegra meu dia.</p></div>
+      <div class="reason"><div class="reason-number">07</div><p>Porque você me ensina tantas coisas.</p></div>
+      <div class="reason"><div class="reason-number">08</div><p>Porque você não desiste.</p></div>
+      <div class="reason"><div class="reason-number">09</div><p>Porque seu amor é meu presente.</p></div>
+      <div class="reason"><div class="reason-number">10</div><p>Porque você é especial de um jeito só seu.</p></div>
+      <div class="reason"><div class="reason-number">11</div><p>Porque posso aprender com você.</p></div>
+      <div class="reason"><div class="reason-number">12</div><p>Porque você merece ser muito feliz.</p></div>
+      <div class="reason"><div class="reason-number">13</div><p>Porque você me faz sentir amada.</p></div>
+      <div class="reason"><div class="reason-number">14</div><p>Porque até os momentos simples ficam especiais.</p></div>
+      <div class="reason"><div class="reason-number">15</div><p>Porque você é parte da minha história.</p></div>
+      <div class="reason"><div class="reason-number">16</div><p>Porque você tem um lugar no meu coração.</p></div>
+      <div class="reason"><div class="reason-number">17</div><p>Porque seu amor me acompanha.</p></div>
+      <div class="reason"><div class="reason-number">18</div><p>Porque eu quero te ver realizando sonhos.</p></div>
+      <div class="reason"><div class="reason-number">19</div><p>Porque você é minha mamãe.</p></div>
+      <div class="reason"><div class="reason-number">20</div><p>Porque sempre vou torcer por você.</p></div>
+      <div class="reason"><div class="reason-number">21</div><p>Porque eu te amo. E isso já diz tudo.</p></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LINHA DO TEMPO -->
+<section class="timeline-section">
+  <div class="section-heading">
+    <div class="label">Uma história que continua</div>
+    <h2>Uma vida de <em>momentos</em></h2>
+    <p>
+      Algumas das coisas mais bonitas não precisam de grandes acontecimentos.
+      Elas simplesmente acontecem quando estamos juntas.
+    </p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>O começo de tudo ♡</h3>
+      <p>
+        O mundo ficou mais bonito quando você começou
+        a fazer parte da minha história.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Meu porto seguro</h3>
+      <p>
+        Nos dias bons e nos dias difíceis,
+        seu amor é uma lembrança de que nunca estou sozinha.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Nossas risadas</h3>
+      <p>
+        As conversas, as brincadeiras e os momentos
+        que só nós sabemos o quanto são especiais.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Hoje, 21 anos</h3>
+      <p>
+        Um novo capítulo começa.
+        Que ele seja cheio de paz, sonhos, amor e felicidade.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Todos os próximos dias</h3>
+      <p>
+        Que a gente ainda viva muitos momentos,
+        tire muitas fotos, dê muitas risadas
+        e construa memórias lindas.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SURPRESA -->
+<section class="surprise-section" id="surpresa">
+  <div class="section-heading">
+    <div class="label">Ainda tem uma coisa...</div>
+    <h2>Uma última <em>surpresa</em></h2>
+    <p>
+      Mamãe, tem uma última mensagem que eu guardei
+      especialmente para você.
+    </p>
+  </div>
+
+  <div class="surprise-box">
+    <div class="gift-icon">🎁</div>
+    <h2>Abra seu presente</h2>
+    <p>
+      Não é algo que se compra.
+      É algo que vem de um coração que ama muito você.
+    </p>
+
+    <button class="btn-primary" onclick="revealSurprise()">
+      Abrir minha surpresa ♡
+    </button>
+
+    <div id="surprise-content">
+      <h3>Você é o meu presente. 🌷</h3>
+      <p>
+        Mamãe, se eu pudesse pedir um presente para a vida,
+        eu pediria que você fosse feliz todos os dias.
+        Que nunca faltasse amor em seu coração,
+        que você nunca deixasse de sonhar
+        e que sempre se lembrasse de que é muito amada.
+        <br><br>
+        Você não precisa ser perfeita.
+        Você só precisa ser você.
+        <br><br>
+        E para mim, isso já é maravilhoso.
+        <br><br>
+        Feliz aniversário, Vitória!
+        <br>
+        Eu te amo mais do que consigo explicar.
+        <br><br>
+        <strong>Com amor, sua filha Renata. ❤️</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final-section">
+  <div class="final-flower">🌸</div>
+
+  <div class="label">Hoje • Amanhã • Sempre</div>
+
+  <h2>Feliz aniversário,<br><em>mamãe!</em></h2>
+
+  <p>
+    Que o seu novo ciclo seja tão bonito quanto
+    o amor que você merece receber.
+    Que Deus cuide de cada passo seu.
+    E que você nunca esqueça que, em algum lugar,
+    existe uma menina que tem muito orgulho de ser sua filha.
+  </p>
+
+  <p>
+    Você é minha mamãe, meu amor,
+    meu pedacinho de mundo.
+  </p>
+
+  <div class="final-signature">
+    Eu te amo infinitamente ♡
+  </div>
+
+  <button class="love-button" onclick="sendLove()">
+    Enviar mais amor 💗
+  </button>
+</section>
+
+<footer>
+  FEITO COM AMOR, CARINHO E UM POUQUINHO DE MAGIA
+  <div class="footer-heart">♡</div>
+  Um presente de Renata para Vitória • 2026
+</footer>
+
+<!-- FOTO AMPLIADA -->
+<div class="lightbox" id="lightbox" onclick="closePhoto()">
+  <button class="lightbox-close" onclick="closePhoto()">×</button>
+  <img id="lightbox-img" src="" alt="Foto ampliada">
+</div>
+
+<script>
+/* ABRIR SITE */
+
+function openSite() {
+  document.getElementById('opening').classList.add('hide');
+  document.body.classList.remove('locked');
+
+  setTimeout(() => {
+    createHeart();
+  }, 300);
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/* CORAÇÕES FLUTUANTES */
+
+function createHeart() {
+  const container = document.getElementById('floating-hearts');
+  const heart = document.createElement('div');
+
+  const symbols = ['♡', '♥', '✨', '🌸', '✧', '💕'];
+  heart.className = 'heart';
+  heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+  heart.style.left = Math.random() * 100 + '%';
+  heart.style.fontSize = (12 + Math.random() * 24) + 'px';
+  heart.style.animationDuration = (6 + Math.random() * 8) + 's';
+
+  container.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 14000);
+}
+
+setInterval(createHeart, 1000);
+
+/* GALERIA */
+
+function openPhoto(element) {
+  const image = element.querySelector('img');
+  document.getElementById('lightbox-img').src = image.src;
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function closePhoto() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePhoto();
+  }
+});
+
+/* SURPRESA */
+
+function revealSurprise() {
+  const surprise = document.getElementById('surprise-content');
+  surprise.classList.add('show');
+
+  surprise.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+/* DECLARAÇÃO DE AMOR */
+
+function sendLove() {
+  for (let i = 0; i < 40; i++) {
+    setTimeout(createHeart, i * 80);
+  }
+
+  alert('Mamãe, eu te amo infinitamente! ❤️🌷');
+}
+
+/* MÚSICA AMBIENTE */
+
+let audioContext;
+let musicPlaying = false;
+let musicInterval;
+
+function toggleMusic() {
+  const button = document.getElementById('musicButton');
+
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+
+  if (musicPlaying) {
+    clearInterval(musicInterval);
+    musicPlaying = false;
+    button.classList.remove('active');
+    button.textContent = '♫';
+    return;
+  }
+
+  musicPlaying = true;
+  button.classList.add('active');
+  button.textContent = '♪';
+
+  // Melodia ambiente suave
+  const notes = [
+    261.63, 329.63, 392.00, 329.63,
+    293.66, 349.23, 440.00, 349.23,
+    261.63, 329.63, 392.00, 523.25,
+    440.00, 392.00, 349.23, 293.66
+  ];
+
+  let index = 0;
+
+  function playNote(frequency) {
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = 'sine';
+    oscillator.frequency.value = frequency;
+
+    gain.gain.setValueAtTime(0, audioContext.currentTime);
+    gain.gain.linearRampToValueAtTime(0.06, audioContext.currentTime + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 1.4);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 1.5);
+  }
+
+  playNote(notes[index]);
+
+  musicInterval = setInterval(() => {
+    index = (index + 1) % notes.length;
+    playNote(notes[index]);
+  }, 900);
+}
+</script>
+
+</body>
+</html>
